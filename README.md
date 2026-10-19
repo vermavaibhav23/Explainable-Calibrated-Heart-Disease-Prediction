@@ -2,6 +2,12 @@
 
 **Explainable and Calibrated Heart Disease Prediction System with Robust Validation**
 
+## Affordable prospective-risk extension
+
+The new `risk_app.py` studies **10-year coronary heart disease (CHD)** with no-lab and basic-lab input sets. It benchmarks eight model families plus an ensemble candidate, uses separate development/calibration/test partitions, and provides an authenticated research API, validation, calibrated-model explanations and a [2026 IEEE literature comparison](docs/IEEE_2026_COMPARISON.md). Follow the [VS Code setup and methodology](docs/AFFORDABLE_RISK.md).
+
+The prospective-risk dataset is teaching-source material with unresolved research provenance. This extension is not heart-attack-only prediction, a clinically validated product or evidence of superiority over published papers. The existing-disease experiment below remains a separate task.
+
 A complete local Python / VS Code major project extending [EnsembleHeartDiseasePrediction](https://github.com/vermavaibhav23/EnsembleHeartDiseasePrediction). It includes a reproducible research pipeline, seven model/ablation comparisons, a calibrated voting ensemble, explanations of the actual deployed probability function, and an interactive Streamlit application. No Colab notebooks are required.
 
 This is a research prototype for classifying the dataset's `HeartDisease` label. It does not diagnose disease, predict a future heart attack, or estimate a time-specific clinical risk.

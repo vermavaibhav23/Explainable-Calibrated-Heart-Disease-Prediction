@@ -1,0 +1,8 @@
+{
+  "feature_set": "no_lab",
+  "measurements": {
+    "male": 0, "age": 50, "currentSmoker": 0, "cigsPerDay": 0,
+    "BPMeds": 0, "prevalentStroke": 0, "prevalentHyp": 0,
+    "diabetes": 0, "sysBP": 120, "diaBP": 80, "BMI": 24, "heartRate": 72
+  }
+}
