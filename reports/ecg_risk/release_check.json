@@ -1,0 +1,69 @@
+{
+  "required_accuracy": 0.93,
+  "required_sensitivity": 0.9,
+  "clinical_release_authorized": false,
+  "scope": "Existing-model audit; targets specified after results were seen. Fresh validation required for any new candidate.",
+  "models": {
+    "routine": {
+      "frozen_threshold": 0.0763246395538588,
+      "weighted_frozen_metrics": {
+        "roc_auc": 0.870823753008348,
+        "pr_auc_ap": 0.3095998649248874,
+        "brier": 0.051911238658676494,
+        "accuracy": 0.7917363889087601,
+        "sensitivity": 0.814904192459114,
+        "specificity": 0.7900880542356069,
+        "precision": 0.21642620083826436,
+        "prevalence": 0.06642188475529222
+      },
+      "frozen_numerical_gate_passed": false,
+      "weighted_threshold_envelope": {
+        "post_hoc_diagnostic_only": true,
+        "joint_target_achievable_by_any_threshold_on_this_sample": false,
+        "maximum_accuracy_at_required_sensitivity": 0.6323338664167291,
+        "maximum_sensitivity_at_required_accuracy": 0.1756798629404402,
+        "prevalence": 0.06642188475529222,
+        "specificity_needed_at_exact_target_sensitivity": 0.9321344293638851
+      },
+      "unweighted_threshold_envelope": {
+        "post_hoc_diagnostic_only": true,
+        "joint_target_achievable_by_any_threshold_on_this_sample": false,
+        "maximum_accuracy_at_required_sensitivity": 0.5959767329132332,
+        "maximum_sensitivity_at_required_accuracy": null,
+        "prevalence": 0.09403780901599612,
+        "specificity_needed_at_exact_target_sensitivity": 0.9331139646869985
+      }
+    },
+    "routine_ecg": {
+      "frozen_threshold": 0.06341786721771107,
+      "weighted_frozen_metrics": {
+        "roc_auc": 0.8855341502417353,
+        "pr_auc_ap": 0.3417019859454354,
+        "brier": 0.05086548635297881,
+        "accuracy": 0.7728963470781771,
+        "sensitivity": 0.8535948828867174,
+        "specificity": 0.7671548362631012,
+        "precision": 0.2068669686152109,
+        "prevalence": 0.06642188475529222
+      },
+      "frozen_numerical_gate_passed": false,
+      "weighted_threshold_envelope": {
+        "post_hoc_diagnostic_only": true,
+        "joint_target_achievable_by_any_threshold_on_this_sample": false,
+        "maximum_accuracy_at_required_sensitivity": 0.7102668510589647,
+        "maximum_sensitivity_at_required_accuracy": 0.16706428915982122,
+        "prevalence": 0.06642188475529222,
+        "specificity_needed_at_exact_target_sensitivity": 0.9321344293638851
+      },
+      "unweighted_threshold_envelope": {
+        "post_hoc_diagnostic_only": true,
+        "joint_target_achievable_by_any_threshold_on_this_sample": false,
+        "maximum_accuracy_at_required_sensitivity": 0.6553562772661173,
+        "maximum_sensitivity_at_required_accuracy": null,
+        "prevalence": 0.09403780901599612,
+        "specificity_needed_at_exact_target_sensitivity": 0.9331139646869985
+      }
+    }
+  },
+  "external_routine_numerical_gate_passed": false
+}

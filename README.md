@@ -4,6 +4,8 @@
 
 ## Routine checkup and ECG extension
 
+**Release target:** the requested joint minimum of 93% accuracy and 90% sensitivity is **not met**. The executable [release audit and deployment status](docs/RELEASE_READINESS.md) records the gap; API hardening does not imply clinical readiness.
+
 `ecg_app.py` adds a **10-year cardiovascular-mortality** research model using official NHANES III records, routine laboratories and resting ECG summaries. It compares routine inputs with routine-plus-ECG inputs, uses an earlier survey phase for development and a later phase for testing, keeps families together, and incorporates survey weights. See the [ECG setup, endpoint and validation guide](docs/ECG_RISK.md). It does not diagnose an acute attack or establish first-heart-attack risk or clinical readiness.
 
 **Completed results:** on 4,126 later-phase participants, the ECG ensemble achieved survey-weighted **AUROC 0.886 (95% interval 0.866–0.906), sensitivity 85.4%, specificity 76.7%, and screening accuracy 77.3%**. The routine-only ensemble achieved AUROC 0.871. The paired AUROC difference was +0.0147 (conditional 95% interval +0.0035 to +0.0243). Calibration alternatives were evaluated; no probability adjustment won on calibration-fold Brier score.

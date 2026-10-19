@@ -72,3 +72,51 @@ def test_unavailable_cvd_model_fails_closed(client):
     app.state.ecg_bundles = {}
     response = client.post("/predict-cvd-mortality", json={"measurements": DEFAULTS}, headers={"X-API-Key": "x" * 32})
     assert response.status_code == 503
+
+
+def test_authentication_precedes_json_parsing(client):
+    response = client.post("/predict", content=b"not JSON")
+    assert response.status_code == 401
+
+
+def test_oversized_request_rejected(client):
+    response = client.post("/predict", content=b" " * 16385,
+                           headers={"X-API-Key": "x" * 32, "Content-Type": "application/json"})
+    assert response.status_code == 413
+
+
+def test_validation_does_not_echo_medical_payload(client):
+    record = request()
+    record["measurements"]["age"] = "private-medical-input"
+    response = client.post("/predict", json=record, headers={"X-API-Key": "x" * 32})
+    assert response.status_code == 422
+    assert "private-medical-input" not in response.text
+    assert response.headers["cache-control"] == "no-store"
+    assert len(response.headers["x-request-id"]) == 32
+
+
+def test_readiness_requires_loaded_model(client):
+    assert client.get("/ready").status_code == 200
+    app.state.bundles = {}
+    app.state.ecg_bundles = {}
+    assert client.get("/ready").status_code == 503
+
+
+def test_cvd_only_deployment_does_not_load_chd(monkeypatch, tmp_path):
+    monkeypatch.setenv("HEARTLENS_API_KEY", "x" * 32)
+    monkeypatch.setenv("HEARTLENS_MODELS", "cvd")
+    monkeypatch.setenv("HEARTLENS_ECG_ARTIFACTS", str(tmp_path))
+    (tmp_path / "bundle_manifest.json").write_text("{}")
+    monkeypatch.setattr("heart_research.risk_api.load_ecg", lambda *args: (DummyModel(), {"version": "test"}))
+    with TestClient(app) as c:
+        assert c.get("/ready").status_code == 200
+        assert not app.state.bundles
+        assert c.post("/predict", json=request(), headers={"X-API-Key": "x" * 32}).status_code == 503
+
+
+def test_empty_deployment_refuses_startup(monkeypatch, tmp_path):
+    monkeypatch.setenv("HEARTLENS_API_KEY", "x" * 32)
+    monkeypatch.setenv("HEARTLENS_MODELS", "cvd")
+    monkeypatch.setenv("HEARTLENS_ECG_ARTIFACTS", str(tmp_path))
+    with pytest.raises(RuntimeError, match="No model bundle"), TestClient(app):
+        pass
