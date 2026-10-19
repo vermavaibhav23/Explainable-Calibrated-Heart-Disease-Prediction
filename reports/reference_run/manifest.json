@@ -1,0 +1,41 @@
+{
+  "created_utc": "2026-10-19T12:11:37.129556+00:00",
+  "seed": 42,
+  "outer_folds": 5,
+  "inner_folds": 3,
+  "calibration_folds": 3,
+  "smoke_run": false,
+  "rows": 918,
+  "dataset_sha256": "948420b084d8a3a0ca42b8419fce9aee175879e43f8aedf712377899a67aa49b",
+  "deployed_model": "calibrated_vote",
+  "threshold": 0.54,
+  "threshold_minimum_development_sensitivity": 0.9,
+  "parameters": {
+    "estimator__model__weights": [
+      1,
+      2,
+      1
+    ]
+  },
+  "selection_scoring": "neg_brier_score",
+  "versions": {
+    "numpy": "2.2.4",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.8.0",
+    "shap": "0.50.0",
+    "streamlit": "1.44.1",
+    "joblib": "1.5.3"
+  },
+  "python": "3.13.2",
+  "protocol": "Nested stratified CV; calibration, hyperparameters and thresholds inside outer training folds.",
+  "limitations": [
+    "Internal validation on a public retrospective dataset, not external or clinical validation.",
+    "The original minor project has already used this dataset; this is not a newly collected holdout.",
+    "No patient/site identifiers: distinct records cannot be proven to be distinct patients/sites.",
+    "Bootstrap intervals condition on OOF predictions and do not capture full training variability.",
+    "Minimum development sensitivity is an experimental target, not a guaranteed deployment property.",
+    "Masking experiments simulate missingness; they do not establish real-world missingness performance.",
+    "Final all-data fit is for demonstration; its training performance is not reported as validation."
+  ],
+  "model_sha256": "a5edd500ca99ba54e93585f9ad9e62d813a632e215428c9ce26bded8cfea63a1"
+}

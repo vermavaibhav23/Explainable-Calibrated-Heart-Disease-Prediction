@@ -1,0 +1,28 @@
+{
+  "source_rows": 918,
+  "retained_rows": 918,
+  "duplicates_removed": 0,
+  "zero_values_treated_as_missing": {
+    "RestingBP": 1,
+    "Cholesterol": 172
+  },
+  "missing_counts": {
+    "Age": 0,
+    "Sex": 0,
+    "ChestPainType": 0,
+    "RestingBP": 1,
+    "Cholesterol": 172,
+    "FastingBS": 0,
+    "RestingECG": 0,
+    "MaxHR": 0,
+    "ExerciseAngina": 0,
+    "Oldpeak": 0,
+    "ST_Slope": 0,
+    "HeartDisease": 0
+  },
+  "class_counts": {
+    "1": 508,
+    "0": 410
+  },
+  "sha256": "948420b084d8a3a0ca42b8419fce9aee175879e43f8aedf712377899a67aa49b"
+}

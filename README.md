@@ -6,6 +6,12 @@ A complete local Python / VS Code major project extending [EnsembleHeartDiseaseP
 
 This is a research prototype for classifying the dataset's `HeartDisease` label. It does not diagnose disease, predict a future heart attack, or estimate a time-specific clinical risk.
 
+## Executed results
+
+The full five-fold run completed on 19 October 2026 using all 918 retained records. The calibrated ensemble achieved **87.15% accuracy, 90.35% sensitivity, 83.17% specificity, 0.929 ROC-AUC and 0.0986 Brier score** on pooled outer-fold predictions. Calibration slightly improved Brier score relative to soft voting but did not improve accuracy. These are internal-validation results, not clinical or external validation. See [results and interpretation](docs/RESULTS.md) and [aggregate run artifacts](reports/reference_run).
+
+Verification: 14 unit/application-startup tests and 3 local full-artifact integration tests passed; GitHub Actions also passed its source-only checks. The CLI successfully generated SHAP explanations for all three fictional example records.
+
 ## Start in VS Code (Windows)
 
 Requires Python 3.11–3.13 and VS Code with the Python extension.
