@@ -1,0 +1,7 @@
+{
+  "partition_rows_disjoint": true,
+  "feature_profiles_disjoint": {
+    "no_lab": true,
+    "basic_lab": true
+  }
+}

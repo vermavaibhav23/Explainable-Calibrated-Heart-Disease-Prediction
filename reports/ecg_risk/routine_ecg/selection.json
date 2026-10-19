@@ -1,0 +1,23 @@
+{
+  "models": [
+    "catboost",
+    "extra_trees",
+    "logistic"
+  ],
+  "calibration": "none",
+  "calibration_cv": [
+    {
+      "method": "none",
+      "brier": 0.05371271728486526
+    },
+    {
+      "method": "sigmoid",
+      "brier": 0.054036647461255576
+    },
+    {
+      "method": "isotonic",
+      "brier": 0.05646314439673478
+    }
+  ],
+  "threshold": 0.06341786721771107
+}

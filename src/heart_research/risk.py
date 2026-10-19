@@ -38,11 +38,11 @@ class CatBoostCompat(ClassifierMixin, BaseEstimator):
         self.l2_leaf_reg = l2_leaf_reg
         self.random_seed = random_seed
 
-    def fit(self, X, y):
+    def fit(self, X, y, sample_weight=None):
         from catboost import CatBoostClassifier
         self.model_ = CatBoostClassifier(**self.get_params(), verbose=False,
                                         allow_writing_files=False, thread_count=1)
-        self.model_.fit(X, y)
+        self.model_.fit(X, y, sample_weight=sample_weight)
         self.classes_ = self.model_.classes_
         self.n_features_in_ = np.asarray(X).shape[1]
         return self

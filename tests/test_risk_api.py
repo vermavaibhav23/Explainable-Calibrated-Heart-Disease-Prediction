@@ -55,3 +55,20 @@ def test_startup_refuses_missing_secret(monkeypatch):
     monkeypatch.delenv("HEARTLENS_API_KEY", raising=False)
     with pytest.raises(RuntimeError, match="HEARTLENS_API_KEY"), TestClient(app):
         pass
+
+
+def test_cvd_endpoint_labels_and_authentication(client):
+    from heart_research.ecg_service import DEFAULTS
+    app.state.ecg_bundles = {"routine_ecg": (DummyModel(), {"version": "test"})}
+    body = {"feature_set": "routine_ecg", "measurements": DEFAULTS}
+    assert client.post("/predict-cvd-mortality", json=body).status_code == 401
+    response = client.post("/predict-cvd-mortality", json=body, headers={"X-API-Key": "x" * 32})
+    assert response.status_code == 200
+    assert "death" in response.json()["endpoint"]
+
+
+def test_unavailable_cvd_model_fails_closed(client):
+    from heart_research.ecg_service import DEFAULTS
+    app.state.ecg_bundles = {}
+    response = client.post("/predict-cvd-mortality", json={"measurements": DEFAULTS}, headers={"X-API-Key": "x" * 32})
+    assert response.status_code == 503

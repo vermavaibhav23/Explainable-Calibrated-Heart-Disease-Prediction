@@ -1,0 +1,109 @@
+{
+  "cohort": "NHANES 2007\u20132008, ages 40\u201379",
+  "n": 3473,
+  "events": 153,
+  "model_sha256": "aff8af2d38c5a367dfd12afe631d2c7bba53e7a42ecbbcc539d8f08ee149ba26",
+  "endpoint": "10-year death from heart or cerebrovascular disease",
+  "threshold": 0.0763246395538588,
+  "weighted_screening": {
+    "roc_auc": 0.8134444499119018,
+    "pr_auc_ap": 0.116988492623008,
+    "brier": 0.031740456218262506,
+    "accuracy": 0.8003890698907463,
+    "sensitivity": 0.6864026930857081,
+    "specificity": 0.8042113620659573,
+    "precision": 0.10519407452286994,
+    "prevalence": 0.03244491435389894
+  },
+  "weighted_at_0_5": {
+    "roc_auc": 0.8134444499119018,
+    "pr_auc_ap": 0.116988492623008,
+    "brier": 0.031740456218262506,
+    "accuracy": 0.9665118793705788,
+    "sensitivity": 0.0,
+    "specificity": 0.9989218120074004,
+    "precision": 0.0,
+    "prevalence": 0.03244491435389894
+  },
+  "unweighted_screening": {
+    "n": 3473,
+    "positive_n": 153,
+    "accuracy": 0.7002591419522027,
+    "balanced_accuracy": 0.7309975194897236,
+    "sensitivity": 0.7647058823529411,
+    "specificity": 0.697289156626506,
+    "precision": 0.10427807486631016,
+    "f1": 0.18352941176470589,
+    "roc_auc": 0.7837388770769351,
+    "pr_auc_ap": 0.11983037176630378,
+    "brier": 0.043469901329362674,
+    "log_loss": 0.16775441288825582,
+    "tn": 2315,
+    "fp": 1005,
+    "fn": 36,
+    "tp": 117
+  },
+  "ci95_design_bootstrap": {
+    "roc_auc": [
+      0.7653137964849939,
+      0.8635722538347606
+    ],
+    "brier": [
+      0.025459195995053256,
+      0.03765747628547747
+    ],
+    "sensitivity": [
+      0.5976039010257291,
+      0.7875331511057023
+    ],
+    "specificity": [
+      0.7810692161828807,
+      0.8231389307892227
+    ],
+    "accuracy": [
+      0.7782800383098715,
+      0.8192860189263603
+    ],
+    "pr_auc_ap": [
+      0.09715105431544009,
+      0.14692868691882455
+    ]
+  },
+  "mean_predicted_risk": 0.05219588688243082,
+  "observed_risk": 0.03244491435389894,
+  "missing_fraction": {
+    "age": 0.0,
+    "male": 0.0,
+    "systolic": 0.042038583357327956,
+    "diastolic": 0.042038583357327956,
+    "bmi": 0.018427872156636913,
+    "smoking": 0.0008638065073423554,
+    "diabetes": 0.021883098186006335,
+    "bp_medication": 0.0014396775122372588,
+    "prior_mi": 0.0020155485171321624,
+    "total_cholesterol": 0.05643535847970055,
+    "hdl": 0.05643535847970055,
+    "hba1c": 0.05211632594298877,
+    "creatinine": 0.06017852001151742
+  },
+  "files_sha256": {
+    "BIOPRO_E.xpt": "6c2cec1e790c09e0319bf5a576a2ab64861d4270679c8113663f83a6b7087ced",
+    "BMX_E.xpt": "b67b50dbd12c9510b49b6348b595b9fd073c422c0c6eac182f90ac57b491a97d",
+    "BPQ_E.xpt": "b802b5855d48fc230c734083ea1e4d4a9d84e1b36bf5e78fcd725c17d6ce77df",
+    "BPX_E.xpt": "5a0303e68e0a4d7ebdbd2bc82f87852c31e44f1733782e107219bed9303baed5",
+    "DEMO_E.xpt": "02b8e97703d04bc99769c751881bece51ac9ba68cf18a2992a45d3bdfb856147",
+    "DIQ_E.xpt": "fb4d698fbec26bc8a09b2cd0f3019f815114742dd2c37ccac1aaf5e0123394c5",
+    "GHB_E.xpt": "4c0311851825e9e0352c58af193c58d8f7a3af613aa5f522893e3c8f83e53a53",
+    "HDL_E.xpt": "3c7021fb4411990551c3ea3f86c5b870c325a23b2b1656054d1ec10883bee19c",
+    "MCQ_E.xpt": "dfbe11c6b036ec4e79aeba7805833fc4951c74662a9510066c3a93932f6990e6",
+    "mortality.dat": "75f89bd545a13ba726a7eb56de4d62f6dfc8f0f76d505dc18ced9752d5e2c77d",
+    "SMQ_E.xpt": "881865ee05f4b2be0c03c761f00ad8e355f2cc5e7d3be41666edef6f3dca5862",
+    "TCHOL_E.xpt": "1e137eb4fcccd0c0e104b4b1849f00b09e8a9077e2143e844a09bb673507fff1"
+  },
+  "limitations": [
+    "Separate US survey cycle, not independent hospital/Indian validation",
+    "Ages limited to 40\u201379 due to public top-coding; different case mix",
+    "Measurement/assay differences and public mortality perturbation",
+    "Does not validate the ECG-augmented model"
+  ]
+}

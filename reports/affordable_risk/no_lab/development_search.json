@@ -1,0 +1,92 @@
+[
+  {
+    "model": "logistic",
+    "development_auc": 0.7322302362098854,
+    "cv_auc_sd": 0.02226645233792734,
+    "parameters": {
+      "logisticregression__C": 0.1
+    }
+  },
+  {
+    "model": "spline_logistic",
+    "development_auc": 0.731211013844137,
+    "cv_auc_sd": 0.024756326562042266,
+    "parameters": {
+      "logisticregression__C": 0.01
+    }
+  },
+  {
+    "model": "catboost",
+    "development_auc": 0.7252517443228473,
+    "cv_auc_sd": 0.01817180638977826,
+    "parameters": {
+      "catboostcompat__learning_rate": 0.02,
+      "catboostcompat__l2_leaf_reg": 10,
+      "catboostcompat__iterations": 250,
+      "catboostcompat__depth": 4
+    }
+  },
+  {
+    "model": "extra_trees",
+    "development_auc": 0.7183596882548129,
+    "cv_auc_sd": 0.018978014234457878,
+    "parameters": {
+      "extratreesclassifier__min_samples_leaf": 5,
+      "extratreesclassifier__max_features": 0.5,
+      "extratreesclassifier__max_depth": 8
+    }
+  },
+  {
+    "model": "xgboost",
+    "development_auc": 0.7164839109326905,
+    "cv_auc_sd": 0.025053312897425892,
+    "parameters": {
+      "xgbclassifier__reg_lambda": 5,
+      "xgbclassifier__n_estimators": 200,
+      "xgbclassifier__min_child_weight": 5,
+      "xgbclassifier__max_depth": 2,
+      "xgbclassifier__learning_rate": 0.05
+    }
+  },
+  {
+    "model": "random_forest",
+    "development_auc": 0.7156735751295337,
+    "cv_auc_sd": 0.0169017963367606,
+    "parameters": {
+      "randomforestclassifier__min_samples_leaf": 60,
+      "randomforestclassifier__max_features": 0.5,
+      "randomforestclassifier__max_depth": 4
+    }
+  },
+  {
+    "model": "hist_gradient",
+    "development_auc": 0.7136009162196815,
+    "cv_auc_sd": 0.023597470408613146,
+    "parameters": {
+      "histgradientboostingclassifier__max_leaf_nodes": 5,
+      "histgradientboostingclassifier__learning_rate": 0.05,
+      "histgradientboostingclassifier__l2_regularization": 50
+    }
+  },
+  {
+    "model": "lightgbm",
+    "development_auc": 0.7105444496199225,
+    "cv_auc_sd": 0.02688618433856151,
+    "parameters": {
+      "lgbmclassifier__reg_lambda": 5,
+      "lgbmclassifier__num_leaves": 5,
+      "lgbmclassifier__n_estimators": 400,
+      "lgbmclassifier__min_child_samples": 70,
+      "lgbmclassifier__learning_rate": 0.02
+    }
+  },
+  {
+    "model": "top3_blend",
+    "development_auc": 0.7328881088323,
+    "parameters": [
+      "logistic",
+      "spline_logistic",
+      "catboost"
+    ]
+  }
+]

@@ -1,0 +1,28 @@
+{
+  "endpoint": "10-year coronary heart disease (not MI-only)",
+  "seed": 2026,
+  "source": "https://ocw.mit.edu/courses/15-071-the-analytics-edge-spring-2017/resources/framingham/",
+  "sha256": "2c0e57dc0361b420becf1facec0a054af06c420eae0ae2faf0fdc8591fadb018",
+  "rows": 4240,
+  "search_iterations_per_family": 10,
+  "cv_folds": 5,
+  "selection": "development CV AUROC; top-three uniform blend competes using development OOF AUROC",
+  "calibration_selection": "five-fold calibration-partition Brier score",
+  "threshold": "calibration OOF sensitivity target 0.80; not a treatment threshold",
+  "limitations": [
+    "teaching-source provenance; research only",
+    "no external validation",
+    "unknown censoring and participant identifiers",
+    "historical US cohort"
+  ],
+  "versions": {
+    "numpy": "2.2.4",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.8.0",
+    "catboost": "1.2.8",
+    "xgboost": "3.1.2",
+    "lightgbm": "4.6.0"
+  },
+  "splits_sha256": "4138a0125fea8017c103484a597532ad4b2012c8b0be042a86dd121772379eca",
+  "public_export": "Participant indices/IDs omitted; full local protocol retained. Reproduce using fixed seed, source checksum and code."
+}

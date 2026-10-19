@@ -1,0 +1,12 @@
+{
+  "feature_set": "routine_ecg",
+  "measurements": {
+    "age": 60, "male": 0, "systolic": 130, "diastolic": 80,
+    "bmi": 25, "smoking": 0, "diabetes": 0, "bp_medication": 0,
+    "prior_mi": 0, "total_cholesterol": 200, "hdl": 50,
+    "hba1c": 5.5, "creatinine": 0.9, "ecg_rate": 72,
+    "pr_ms": 160, "qrs_ms": 90, "qt_ms": 400,
+    "p_axis": 45, "qrs_axis": 30, "t_axis": 45,
+    "major_ecg_abnormality": 0
+  }
+}

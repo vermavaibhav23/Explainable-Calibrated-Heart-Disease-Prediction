@@ -1,0 +1,66 @@
+{
+  "endpoint": "10-year death from heart or cerebrovascular disease",
+  "development_phase": "1988\u20131991",
+  "test_phase": "1991\u20131994",
+  "seed": 2026,
+  "cv": "5-fold family-grouped, stratified",
+  "iterations": 6,
+  "features": {
+    "routine": [
+      "age",
+      "male",
+      "systolic",
+      "diastolic",
+      "bmi",
+      "smoking",
+      "diabetes",
+      "bp_medication",
+      "prior_mi",
+      "total_cholesterol",
+      "hdl",
+      "hba1c",
+      "creatinine"
+    ],
+    "routine_ecg": [
+      "age",
+      "male",
+      "systolic",
+      "diastolic",
+      "bmi",
+      "smoking",
+      "diabetes",
+      "bp_medication",
+      "prior_mi",
+      "total_cholesterol",
+      "hdl",
+      "hba1c",
+      "creatinine",
+      "ecg_rate",
+      "pr_ms",
+      "qrs_ms",
+      "qt_ms",
+      "p_axis",
+      "qrs_axis",
+      "t_axis",
+      "major_ecg_abnormality"
+    ]
+  },
+  "training_weight": "phase-specific MEC weight, normalized to mean 1",
+  "selection": "weighted development OOF AUROC; top-three blend competes with best single",
+  "calibration": "weighted Brier over five family-grouped calibration folds",
+  "threshold": "weighted calibration OOF sensitivity target 0.80",
+  "sha256": "f39dc9184f75d65398cb27d9439aeaed0baee930aa04cc7f4838962b2acbfe22",
+  "counts": {
+    "train": 3489,
+    "calibration": 871,
+    "test": 4126
+  },
+  "limitations": [
+    "Historical US cohort; no contemporary independent validation",
+    "Public death cause/time sometimes perturbed for confidentiality",
+    "Fatal heart/cerebrovascular events only; not first MI or all CVD",
+    "Includes people with baseline disease; ages 40\u201389"
+  ],
+  "partitions_sha256": "5d80f80afc7fa38a42fd34009722a3e168d19ec563c97a7e66c727f45336f594",
+  "public_export": "Participant indices/IDs omitted; full local protocol retained. Reproduce using fixed seed, source checksum and code."
+}

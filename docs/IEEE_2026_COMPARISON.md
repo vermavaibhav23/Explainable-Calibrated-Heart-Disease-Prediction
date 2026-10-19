@@ -21,3 +21,9 @@ A closer endpoint reference is **Integrating Artificial Intelligence into Health
 - Add a truly independent cohort when access is approved. This is the strongest unresolved step toward a publishable and clinically useful result.
 
 The present educational benchmark does not justify “best model,” state-of-the-art, prospective clinical reliability or industry-ready medical-device claims.
+
+## ECG and routine-checkup extension
+
+The NHANES extension predicts ten-year **fatal** heart/cerebrovascular disease and uses temporal phase separation and survey weights. The three 2026 IEEE journal studies above remain contextual comparisons, not matched baselines. A targeted search did not establish an exactly comparable 2026 IEEE journal benchmark with the same public linkage, cohort, predictors and split.
+
+The authors' [2021 NHANES III ECG mortality preprint](https://www.medrxiv.org/content/10.1101/2021.09.09.21263327v1.full) is an endpoint-relevant historical reference, not a 2026 IEEE journal article. Its cohort/feature set and mortality linkage differ; it was not reproduced. A [2023 multi-centre ECG risk study](https://www.nature.com/articles/s41746-023-00916-6) illustrates evaluation across institutions, which this public-data project has not achieved. Neither reference supports claiming that this project is the best model.

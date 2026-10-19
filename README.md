@@ -2,6 +2,16 @@
 
 **Explainable and Calibrated Heart Disease Prediction System with Robust Validation**
 
+## Routine checkup and ECG extension
+
+`ecg_app.py` adds a **10-year cardiovascular-mortality** research model using official NHANES III records, routine laboratories and resting ECG summaries. It compares routine inputs with routine-plus-ECG inputs, uses an earlier survey phase for development and a later phase for testing, keeps families together, and incorporates survey weights. See the [ECG setup, endpoint and validation guide](docs/ECG_RISK.md). It does not diagnose an acute attack or establish first-heart-attack risk or clinical readiness.
+
+**Completed results:** on 4,126 later-phase participants, the ECG ensemble achieved survey-weighted **AUROC 0.886 (95% interval 0.866–0.906), sensitivity 85.4%, specificity 76.7%, and screening accuracy 77.3%**. The routine-only ensemble achieved AUROC 0.871. The paired AUROC difference was +0.0147 (conditional 95% interval +0.0035 to +0.0243). Calibration alternatives were evaluated; no probability adjustment won on calibration-fold Brier score.
+
+A separate 2007–2008 survey sample of 3,473 people tested the frozen routine-only model: weighted AUROC **0.813**, sensitivity **68.6%**, specificity **80.4%**. Mean predicted risk was 5.2% versus 3.2% observed, exposing transportability/calibration limitations. This check does not validate the ECG model. See the [complete results](docs/ECG_RESULTS.md), [aggregate evidence](reports/ecg_risk), and [Framingham results](docs/AFFORDABLE_RISK_RESULTS.md).
+
+Start the trained local extension with `.venv\Scripts\python.exe -m streamlit run ecg_app.py`. Fresh clones must first follow the ECG guide to download data and train; model binaries and participant records are not published. Accuracy at the default 0.5 threshold is misleading here: predicting no fatal event for everyone already achieves 93.4% weighted accuracy and detects no events.
+
 ## Affordable prospective-risk extension
 
 The new `risk_app.py` studies **10-year coronary heart disease (CHD)** with no-lab and basic-lab input sets. It benchmarks eight model families plus an ensemble candidate, uses separate development/calibration/test partitions, and provides an authenticated research API, validation, calibrated-model explanations and a [2026 IEEE literature comparison](docs/IEEE_2026_COMPARISON.md). Follow the [VS Code setup and methodology](docs/AFFORDABLE_RISK.md).

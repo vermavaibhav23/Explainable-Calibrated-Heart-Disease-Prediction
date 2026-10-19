@@ -1,0 +1,10 @@
+{
+  "cohort": "NHANES 2007\u20132008",
+  "ages": "40\u201379 (80+ top-coded)",
+  "endpoint": "10-year death from heart or cerebrovascular disease",
+  "frozen_model": "routine",
+  "refitting": false,
+  "recalibration": false,
+  "threshold_retuned": false,
+  "reason": "independent survey cycle with harmonizable routine inputs; no ECG validation"
+}

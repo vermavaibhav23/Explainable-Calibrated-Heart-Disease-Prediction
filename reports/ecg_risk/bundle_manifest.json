@@ -1,0 +1,12 @@
+{
+  "version": "3.0.0-research",
+  "endpoint": "10-year death from heart or cerebrovascular disease",
+  "clinically_validated": false,
+  "model_sha256": {
+    "routine": "aff8af2d38c5a367dfd12afe631d2c7bba53e7a42ecbbcc539d8f08ee149ba26",
+    "routine_ecg": "530ecacbe628647f062fca63bac0d946df7bf4e3f782555a6d11d2ecd0a31cbd"
+  },
+  "data_sha256": "f39dc9184f75d65398cb27d9439aeaed0baee930aa04cc7f4838962b2acbfe22",
+  "split_audit": "family-disjoint temporal holdout",
+  "interval_method": "Rao-Wu-style n_h-1 pseudo-PSU resampling within phase-specific two-PSU strata; conditional on fit; no FPC"
+}

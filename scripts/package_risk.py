@@ -9,9 +9,10 @@ import matplotlib
 
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+import numpy as np
 import pandas as pd
 from sklearn.calibration import calibration_curve
-from sklearn.metrics import PrecisionRecallDisplay, RocCurveDisplay
+from sklearn.metrics import PrecisionRecallDisplay, RocCurveDisplay, brier_score_loss, roc_auc_score
 
 from heart_research.risk import FEATURE_SETS, load_risk_data, save_json
 
@@ -45,6 +46,23 @@ def main():
                 "clinically_validated": False, "data_sha256": protocol["sha256"], "model_sha256": {},
                 "versions": protocol["versions"]}
     summary = json.loads((root / "summary.json").read_text())
+    first = pd.read_csv(root / "no_lab" / "holdout_predictions.csv").sort_values("row")
+    second = pd.read_csv(root / "basic_lab" / "holdout_predictions.csv").sort_values("row")
+    assert np.array_equal(first.row, second.row) and np.array_equal(first.y, second.y)
+    y = first.y.to_numpy()
+    p0, p1 = first.probability.to_numpy(), second.probability.to_numpy()
+    rng = np.random.default_rng(2026)
+    differences = []
+    for _ in range(1000):
+        idx = np.concatenate([rng.choice(np.flatnonzero(y == k), np.sum(y == k), replace=True) for k in [0, 1]])
+        differences.append([roc_auc_score(y[idx], p1[idx]) - roc_auc_score(y[idx], p0[idx]),
+                            brier_score_loss(y[idx], p1[idx]) - brier_score_loss(y[idx], p0[idx])])
+    comparison = {"direction": "basic_lab minus no_lab", "bootstrap": "paired, stratified, conditional",
+                  "auc_difference": roc_auc_score(y, p1) - roc_auc_score(y, p0),
+                  "brier_difference": brier_score_loss(y, p1) - brier_score_loss(y, p0),
+                  "ci95_auc_difference": np.quantile(np.array(differences)[:, 0], [0.025, 0.975]).tolist(),
+                  "ci95_brier_difference": np.quantile(np.array(differences)[:, 1], [0.025, 0.975]).tolist()}
+    save_json(root / "feature_set_comparison.json", comparison)
     lines = ["# Affordable CHD risk: completed reference experiment", "",
              "Educational research result; not MI-only prediction or an externally validated clinical model.", "",
              "Models were selected on development data and calibrated on a separate partition before evaluating 848 held-out records.", "",
@@ -91,6 +109,7 @@ def main():
                          f"{group['sensitivity']:.1%} | {group['specificity']:.1%} |")
         lines += ["", "Subgroups are descriptive, not a fairness certification; small event counts make estimates uncertain.", ""]
     lines += ["## Interpretation", "",
+              f"Adding basic labs changed AUROC by {comparison['auc_difference']:+.4f} (paired conditional 95% interval {comparison['ci95_auc_difference'][0]:+.4f} to {comparison['ci95_auc_difference'][1]:+.4f}). This compares the complete selected pipelines, not a pure causal effect of buying laboratory tests.", "",
               "These models cannot be ranked against the old 918-row disease-detection project or unrelated IEEE diagnosis papers by accuracy. The target, prevalence, inputs and evaluation differ. This run does not show state-of-the-art or clinical readiness. See AFFORDABLE_RISK.md and IEEE_2026_COMPARISON.md for methodology, provenance and release gates.", "",
               "The first run stopped during CatBoost development scoring due to a sklearn interface mismatch. An estimator adapter fixed this before any holdout evaluation; the original seed, splits and search space were retained."]
     save_json(root / "split_audit.json", audit)

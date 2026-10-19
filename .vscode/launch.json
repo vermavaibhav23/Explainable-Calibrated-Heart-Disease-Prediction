@@ -1,6 +1,7 @@
 {
   "version": "0.2.0",
   "configurations": [
+    {"name": "HeartLens: routine checkup + ECG app", "type": "debugpy", "request": "launch", "module": "streamlit", "args": ["run", "ecg_app.py"], "console": "integratedTerminal", "cwd": "${workspaceFolder}"},
     {"name": "HeartLens: affordable risk app", "type": "debugpy", "request": "launch", "module": "streamlit", "args": ["run", "risk_app.py"], "console": "integratedTerminal", "cwd": "${workspaceFolder}"},
     {"name": "HeartLens: affordable risk experiment", "type": "debugpy", "request": "launch", "module": "heart_research.risk", "args": ["--data", "data/raw/framingham.csv", "--output", "artifacts/new-risk-run", "--jobs", "2"], "console": "integratedTerminal", "cwd": "${workspaceFolder}"},
     {"name": "HeartLens: Streamlit app", "type": "debugpy", "request": "launch", "module": "streamlit", "args": ["run", "app.py"], "console": "integratedTerminal", "cwd": "${workspaceFolder}"},
