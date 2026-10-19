@@ -1,0 +1,206 @@
+{
+  "routine": {
+    "models": [
+      "catboost",
+      "extra_trees",
+      "random_forest"
+    ],
+    "calibration": "none",
+    "threshold": 0.0763246395538588,
+    "weighted_screening": {
+      "roc_auc": 0.870823753008348,
+      "pr_auc_ap": 0.3095998649248874,
+      "brier": 0.051911238658676494,
+      "accuracy": 0.7917363889087601,
+      "sensitivity": 0.814904192459114,
+      "specificity": 0.7900880542356069,
+      "precision": 0.21642620083826436,
+      "prevalence": 0.06642188475529222
+    },
+    "weighted_at_0_5": {
+      "roc_auc": 0.870823753008348,
+      "pr_auc_ap": 0.3095998649248874,
+      "brier": 0.051911238658676494,
+      "accuracy": 0.9314790991215153,
+      "sensitivity": 0.046350210758965726,
+      "specificity": 0.9944539354596471,
+      "precision": 0.37288478554805776,
+      "prevalence": 0.06642188475529222
+    },
+    "unweighted_screening": {
+      "n": 4126,
+      "positive_n": 388,
+      "accuracy": 0.6992244304411052,
+      "balanced_accuracy": 0.7635533363119371,
+      "sensitivity": 0.8427835051546392,
+      "specificity": 0.6843231674692349,
+      "precision": 0.21698739216987392,
+      "f1": 0.34511873350923483,
+      "roc_auc": 0.8363760597485838,
+      "pr_auc_ap": 0.3196481892358467,
+      "brier": 0.07224058277982441,
+      "log_loss": 0.24453311582806087,
+      "tn": 2558,
+      "fp": 1180,
+      "fn": 61,
+      "tp": 327
+    },
+    "unweighted_at_0_5": {
+      "n": 4126,
+      "positive_n": 388,
+      "accuracy": 0.9037809015996122,
+      "balanced_accuracy": 0.5230490145786103,
+      "sensitivity": 0.05412371134020619,
+      "specificity": 0.9919743178170144,
+      "precision": 0.4117647058823529,
+      "f1": 0.09567198177676538,
+      "roc_auc": 0.8363760597485838,
+      "pr_auc_ap": 0.3196481892358467,
+      "brier": 0.07224058277982441,
+      "log_loss": 0.24453311582806087,
+      "tn": 3708,
+      "fp": 30,
+      "fn": 367,
+      "tp": 21
+    },
+    "ci95_design_bootstrap": {
+      "roc_auc": [
+        0.851624870164254,
+        0.8935439020612274
+      ],
+      "brier": [
+        0.044439560399006255,
+        0.058921287086123944
+      ],
+      "sensitivity": [
+        0.7663725707429756,
+        0.8770317131710924
+      ],
+      "specificity": [
+        0.7703564481573921,
+        0.8094131081686845
+      ],
+      "accuracy": [
+        0.7742372791406806,
+        0.8097346568601917
+      ],
+      "pr_auc_ap": [
+        0.2689997194620724,
+        0.3514727800952431
+      ]
+    },
+    "weighted_constant_baseline": {
+      "roc_auc": 0.5,
+      "pr_auc_ap": 0.06642188475529222,
+      "brier": 0.06201003827741001,
+      "accuracy": 0.9335781152447078,
+      "sensitivity": 0.0,
+      "specificity": 1.0,
+      "precision": null,
+      "prevalence": 0.06642188475529222
+    },
+    "interval_method": "Rao-Wu-style n_h-1 pseudo-PSU resampling within phase-specific two-PSU strata; conditional on fit; no FPC"
+  },
+  "routine_ecg": {
+    "models": [
+      "catboost",
+      "extra_trees",
+      "logistic"
+    ],
+    "calibration": "none",
+    "threshold": 0.06341786721771107,
+    "weighted_screening": {
+      "roc_auc": 0.8855341502417353,
+      "pr_auc_ap": 0.3417019859454354,
+      "brier": 0.05086548635297881,
+      "accuracy": 0.7728963470781771,
+      "sensitivity": 0.8535948828867174,
+      "specificity": 0.7671548362631012,
+      "precision": 0.2068669686152109,
+      "prevalence": 0.06642188475529222
+    },
+    "weighted_at_0_5": {
+      "roc_auc": 0.8855341502417353,
+      "pr_auc_ap": 0.3417019859454354,
+      "brier": 0.05086548635297881,
+      "accuracy": 0.9329417887206131,
+      "sensitivity": 0.0978851745878865,
+      "specificity": 0.9923541006443238,
+      "precision": 0.4766738408032015,
+      "prevalence": 0.06642188475529222
+    },
+    "unweighted_screening": {
+      "n": 4126,
+      "positive_n": 388,
+      "accuracy": 0.686863790596219,
+      "balanced_accuracy": 0.7740549828178693,
+      "sensitivity": 0.8814432989690721,
+      "specificity": 0.6666666666666666,
+      "precision": 0.21536523929471033,
+      "f1": 0.34615384615384615,
+      "roc_auc": 0.8538760459587518,
+      "pr_auc_ap": 0.36532363581888894,
+      "brier": 0.06995715121215242,
+      "log_loss": 0.23541726184518916,
+      "tn": 2492,
+      "fp": 1246,
+      "fn": 46,
+      "tp": 342
+    },
+    "unweighted_at_0_5": {
+      "n": 4126,
+      "positive_n": 388,
+      "accuracy": 0.9083858458555502,
+      "balanced_accuracy": 0.5486884490851826,
+      "sensitivity": 0.1056701030927835,
+      "specificity": 0.9917067950775816,
+      "precision": 0.5694444444444444,
+      "f1": 0.1782608695652174,
+      "roc_auc": 0.8538760459587518,
+      "pr_auc_ap": 0.36532363581888894,
+      "brier": 0.06995715121215242,
+      "log_loss": 0.23541726184518916,
+      "tn": 3707,
+      "fp": 31,
+      "fn": 347,
+      "tp": 41
+    },
+    "ci95_design_bootstrap": {
+      "roc_auc": [
+        0.866254945068433,
+        0.9058698197895317
+      ],
+      "brier": [
+        0.04345331908153692,
+        0.05759946067689303
+      ],
+      "sensitivity": [
+        0.8132134032135439,
+        0.9076505891588611
+      ],
+      "specificity": [
+        0.746607687476423,
+        0.7874699520107366
+      ],
+      "accuracy": [
+        0.7551243921625853,
+        0.7916528145090174
+      ],
+      "pr_auc_ap": [
+        0.3093771278361175,
+        0.37928847407968913
+      ]
+    },
+    "weighted_constant_baseline": {
+      "roc_auc": 0.5,
+      "pr_auc_ap": 0.06642188475529222,
+      "brier": 0.06201003827741001,
+      "accuracy": 0.9335781152447078,
+      "sensitivity": 0.0,
+      "specificity": 1.0,
+      "precision": null,
+      "prevalence": 0.06642188475529222
+    },
+    "interval_method": "Rao-Wu-style n_h-1 pseudo-PSU resampling within phase-specific two-PSU strata; conditional on fit; no FPC"
+  }
+}

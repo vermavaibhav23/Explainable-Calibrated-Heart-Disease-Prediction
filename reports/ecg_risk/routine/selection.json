@@ -1,0 +1,23 @@
+{
+  "models": [
+    "catboost",
+    "extra_trees",
+    "random_forest"
+  ],
+  "calibration": "none",
+  "calibration_cv": [
+    {
+      "method": "none",
+      "brier": 0.05540928499358004
+    },
+    {
+      "method": "sigmoid",
+      "brier": 0.05594021954774033
+    },
+    {
+      "method": "isotonic",
+      "brier": 0.058328338592560744
+    }
+  ],
+  "threshold": 0.0763246395538588
+}

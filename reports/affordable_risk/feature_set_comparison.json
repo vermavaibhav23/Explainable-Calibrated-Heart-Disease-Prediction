@@ -1,0 +1,14 @@
+{
+  "direction": "basic_lab minus no_lab",
+  "bootstrap": "paired, stratified, conditional",
+  "auc_difference": -0.0010242477170057107,
+  "brier_difference": -0.00035733217645880777,
+  "ci95_auc_difference": [
+    -0.009568360448943871,
+    0.0077888648100829195
+  ],
+  "ci95_brier_difference": [
+    -0.0015337602037778896,
+    0.0007011100145542836
+  ]
+}

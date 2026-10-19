@@ -1,0 +1,19 @@
+{
+  "version": "2.0.0-research",
+  "endpoint": "10-year coronary heart disease (not MI-only)",
+  "research_only": true,
+  "clinically_validated": false,
+  "data_sha256": "2c0e57dc0361b420becf1facec0a054af06c420eae0ae2faf0fdc8591fadb018",
+  "model_sha256": {
+    "no_lab": "dc212d77e0e200e13c4562b15936a83baff09609511b6b45bc1da07699cb258e",
+    "basic_lab": "fee4d9899d70cade81a03cd1a8998d90555dd894ceb07f4e5a78c9d2f1c660d2"
+  },
+  "versions": {
+    "numpy": "2.2.4",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.8.0",
+    "catboost": "1.2.8",
+    "xgboost": "3.1.2",
+    "lightgbm": "4.6.0"
+  }
+}

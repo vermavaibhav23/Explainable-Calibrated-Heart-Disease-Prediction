@@ -1,0 +1,102 @@
+{
+  "models": [
+    "catboost",
+    "extra_trees",
+    "random_forest"
+  ],
+  "calibration": "none",
+  "threshold": 0.0763246395538588,
+  "weighted_screening": {
+    "roc_auc": 0.870823753008348,
+    "pr_auc_ap": 0.3095998649248874,
+    "brier": 0.051911238658676494,
+    "accuracy": 0.7917363889087601,
+    "sensitivity": 0.814904192459114,
+    "specificity": 0.7900880542356069,
+    "precision": 0.21642620083826436,
+    "prevalence": 0.06642188475529222
+  },
+  "weighted_at_0_5": {
+    "roc_auc": 0.870823753008348,
+    "pr_auc_ap": 0.3095998649248874,
+    "brier": 0.051911238658676494,
+    "accuracy": 0.9314790991215153,
+    "sensitivity": 0.046350210758965726,
+    "specificity": 0.9944539354596471,
+    "precision": 0.37288478554805776,
+    "prevalence": 0.06642188475529222
+  },
+  "unweighted_screening": {
+    "n": 4126,
+    "positive_n": 388,
+    "accuracy": 0.6992244304411052,
+    "balanced_accuracy": 0.7635533363119371,
+    "sensitivity": 0.8427835051546392,
+    "specificity": 0.6843231674692349,
+    "precision": 0.21698739216987392,
+    "f1": 0.34511873350923483,
+    "roc_auc": 0.8363760597485838,
+    "pr_auc_ap": 0.3196481892358467,
+    "brier": 0.07224058277982441,
+    "log_loss": 0.24453311582806087,
+    "tn": 2558,
+    "fp": 1180,
+    "fn": 61,
+    "tp": 327
+  },
+  "unweighted_at_0_5": {
+    "n": 4126,
+    "positive_n": 388,
+    "accuracy": 0.9037809015996122,
+    "balanced_accuracy": 0.5230490145786103,
+    "sensitivity": 0.05412371134020619,
+    "specificity": 0.9919743178170144,
+    "precision": 0.4117647058823529,
+    "f1": 0.09567198177676538,
+    "roc_auc": 0.8363760597485838,
+    "pr_auc_ap": 0.3196481892358467,
+    "brier": 0.07224058277982441,
+    "log_loss": 0.24453311582806087,
+    "tn": 3708,
+    "fp": 30,
+    "fn": 367,
+    "tp": 21
+  },
+  "ci95_design_bootstrap": {
+    "roc_auc": [
+      0.851624870164254,
+      0.8935439020612274
+    ],
+    "brier": [
+      0.044439560399006255,
+      0.058921287086123944
+    ],
+    "sensitivity": [
+      0.7663725707429756,
+      0.8770317131710924
+    ],
+    "specificity": [
+      0.7703564481573921,
+      0.8094131081686845
+    ],
+    "accuracy": [
+      0.7742372791406806,
+      0.8097346568601917
+    ],
+    "pr_auc_ap": [
+      0.2689997194620724,
+      0.3514727800952431
+    ]
+  },
+  "weighted_constant_baseline": {
+    "roc_auc": 0.5,
+    "pr_auc_ap": 0.06642188475529222,
+    "brier": 0.06201003827741001,
+    "accuracy": 0.9335781152447078,
+    "sensitivity": 0.0,
+    "specificity": 1.0,
+    "precision": null,
+    "prevalence": 0.06642188475529222
+  },
+  "interval_method": "Rao-Wu-style n_h-1 pseudo-PSU resampling within phase-specific two-PSU strata; conditional on fit; no FPC"
+}

@@ -1,0 +1,14 @@
+{
+  "direction": "routine_ecg minus routine",
+  "interval_method": "paired rescaled pseudo-PSU bootstrap, conditional",
+  "auc_difference": 0.014710397233387296,
+  "ci95_auc_difference": [
+    0.0035300360029208696,
+    0.024271486219014034
+  ],
+  "brier_difference": -0.0010457523056976864,
+  "ci95_brier_difference": [
+    -0.002422019464650691,
+    0.00031834713289827026
+  ]
+}

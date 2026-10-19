@@ -11,6 +11,8 @@ artifacts/*
 reports/*
 !reports/.gitkeep
 !reports/reference_run/
+!reports/affordable_risk/
+!reports/ecg_risk/
 .env
 *.log
 

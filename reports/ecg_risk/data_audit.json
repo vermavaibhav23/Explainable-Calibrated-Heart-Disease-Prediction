@@ -1,0 +1,46 @@
+{
+  "endpoint": "10-year death from heart or cerebrovascular disease",
+  "source_ecg_rows": 8561,
+  "retained_rows": 8486,
+  "excluded_rows": 75,
+  "events": 839,
+  "phase_rows": {
+    "1": 4360,
+    "2": 4126
+  },
+  "missing_fraction": {
+    "age": 0.0,
+    "male": 0.0,
+    "systolic": 0.0007070469007777516,
+    "diastolic": 0.0008248880509073768,
+    "bmi": 0.0015319349516851285,
+    "smoking": 0.0,
+    "diabetes": 0.0010605703511666273,
+    "bp_medication": 0.005067169455573887,
+    "prior_mi": 0.012019797313221777,
+    "total_cholesterol": 0.03865189724251709,
+    "hdl": 0.04690077775159086,
+    "hba1c": 0.029578128682535943,
+    "creatinine": 0.051967947207164744,
+    "ecg_rate": 0.004831487155314636,
+    "pr_ms": 0.013198208814518029,
+    "qrs_ms": 0.0034173933537591326,
+    "qt_ms": 0.020740042422814048,
+    "p_axis": 0.006363422106999765,
+    "qrs_axis": 0.006363422106999765,
+    "t_axis": 0.00648126325712939,
+    "major_ecg_abnormality": 0.0023568230025925053
+  },
+  "files_sha256": {
+    "adult.dat": "32a93a474cbd3bd0dd2ddc82153c47cf0b9f81eda025e255dd251bb5620a3adf",
+    "adult.sas": "b8d61f5bc56590d95220d88058bb054995f3beb7aeb400af88868c2679f73d4c",
+    "exam.dat": "b2eba81d3c4f921a4fafe6847818e27813eab4a3494bcc26f90a6fe3fcc71fec",
+    "exam.sas": "240d4c917c3f437063240dbb038184d8e34e2834c5d2596a3ca389ef6ccb3fe6",
+    "lab.dat": "b87ae166c02e4907b08b7a52a1c01122b4173ec2970b891b624f43cedc038e48",
+    "lab.sas": "fe804748e3881bb8f2a92c57af816d603bdd02e1587f835547cbfc4f82ab8304",
+    "mortality.dat": "224293447dbb8ec9412acf05441ab7d271124a17419dba6cf236ae36d5dd5b98",
+    "mortality.sas": "b17da79e184167ed72d676a7c58dfd6d7008e75202372981160d3679808db4fa",
+    "nh3ecg.dat": "28bd0f184e3bd943149a6f368ddecce5e418c4212993b40c01b4d9bf98173718",
+    "nh3ecg.sas": "ed659b7316c0e7dda384ca0dccf774fe878f6d1de3be352d5c3446b392428af7"
+  }
+}

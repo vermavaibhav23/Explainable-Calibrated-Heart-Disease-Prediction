@@ -1,0 +1,84 @@
+[
+  {
+    "model": "catboost",
+    "development_auc": 0.8734746477255804,
+    "parameters": {
+      "catboostcompat__learning_rate": 0.02,
+      "catboostcompat__l2_leaf_reg": 3,
+      "catboostcompat__iterations": 250,
+      "catboostcompat__depth": 6
+    }
+  },
+  {
+    "model": "extra_trees",
+    "development_auc": 0.8730022243159176,
+    "parameters": {
+      "extratreesclassifier__min_samples_leaf": 5,
+      "extratreesclassifier__max_features": 0.5,
+      "extratreesclassifier__max_depth": null
+    }
+  },
+  {
+    "model": "random_forest",
+    "development_auc": 0.8703047669699351,
+    "parameters": {
+      "randomforestclassifier__min_samples_leaf": 30,
+      "randomforestclassifier__max_features": 0.5,
+      "randomforestclassifier__max_depth": null
+    }
+  },
+  {
+    "model": "spline_logistic",
+    "development_auc": 0.8671234348929109,
+    "parameters": {
+      "logisticregression__C": 0.01
+    }
+  },
+  {
+    "model": "logistic",
+    "development_auc": 0.86662319442721,
+    "parameters": {
+      "logisticregression__C": 0.1
+    }
+  },
+  {
+    "model": "hist_gradient",
+    "development_auc": 0.8626740584026926,
+    "parameters": {
+      "histgradientboostingclassifier__max_leaf_nodes": 20,
+      "histgradientboostingclassifier__learning_rate": 0.1,
+      "histgradientboostingclassifier__l2_regularization": 10
+    }
+  },
+  {
+    "model": "xgboost",
+    "development_auc": 0.8601460215671431,
+    "parameters": {
+      "xgbclassifier__reg_lambda": 5,
+      "xgbclassifier__n_estimators": 400,
+      "xgbclassifier__min_child_weight": 5,
+      "xgbclassifier__max_depth": 3,
+      "xgbclassifier__learning_rate": 0.02
+    }
+  },
+  {
+    "model": "lightgbm",
+    "development_auc": 0.860102144698497,
+    "parameters": {
+      "lgbmclassifier__reg_lambda": 20,
+      "lgbmclassifier__num_leaves": 20,
+      "lgbmclassifier__n_estimators": 400,
+      "lgbmclassifier__min_child_samples": 30,
+      "lgbmclassifier__learning_rate": 0.02
+    }
+  },
+  {
+    "model": "top3_blend",
+    "development_auc": 0.877233751270735,
+    "parameters": [
+      "catboost",
+      "extra_trees",
+      "random_forest"
+    ]
+  }
+]

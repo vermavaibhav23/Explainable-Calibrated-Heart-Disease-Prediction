@@ -1,0 +1,23 @@
+{
+  "models": [
+    "logistic",
+    "spline_logistic",
+    "catboost"
+  ],
+  "calibration": "none",
+  "calibration_cv": [
+    {
+      "method": "none",
+      "brier": 0.11441664232689439
+    },
+    {
+      "method": "sigmoid",
+      "brier": 0.11442400263671709
+    },
+    {
+      "method": "isotonic",
+      "brier": 0.11598954624115236
+    }
+  ],
+  "threshold": 0.11606783120657549
+}
