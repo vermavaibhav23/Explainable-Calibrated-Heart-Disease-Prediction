@@ -1,0 +1,8 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {"name": "HeartLens: Streamlit app", "type": "debugpy", "request": "launch", "module": "streamlit", "args": ["run", "app.py"], "console": "integratedTerminal", "cwd": "${workspaceFolder}"},
+    {"name": "HeartLens: full experiment", "type": "debugpy", "request": "launch", "module": "heart_research.cli", "args": ["train", "--output", "artifacts/new-run", "--jobs", "2"], "console": "integratedTerminal", "cwd": "${workspaceFolder}"}
+  ]
+}
+
